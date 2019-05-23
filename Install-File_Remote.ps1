@@ -1,5 +1,5 @@
 #This script is intended to solve the double hop issue with powershell
-#It copies files from local to remote then executes.
+#It copies files from local to server side then executes.
 
 #csv for hostnames
 $clients  = import-csv C:\Users\User\Scripts\Powershell\Hostnames_test.csv
@@ -12,8 +12,8 @@ foreach($pc in $clients)
 
    #Copy bat file and exe from local to server side
 
-   Copy-Item –Path C:\Users\User\Scripts\Powershell\HelloWorld_Install.bat –Destination \\$client\c$\temp\
-   Copy-Item –Path C:\Users\User\Scripts\Powershell\HelloWorld.exe –Destination \\$client\c$\temp\
+   Copy-Item â€“Path C:\Users\User\Scripts\Powershell\HelloWorld_Install.bat â€“Destination \\$client\c$\temp\
+   Copy-Item â€“Path C:\Users\User\Scripts\Powershell\HelloWorld.exe â€“Destination \\$client\c$\temp\
 
    #invoke serverside command to install batch file.
    Invoke-Command -ComputerName $client -ScriptBlock {Invoke-Expression -Command:"cmd.exe /c 'C:\\temp\HelloWorld.bat'" }
