@@ -19,4 +19,4 @@ foreach($pc in $clients)
    Invoke-Command -ComputerName $client -ScriptBlock {Invoke-Expression -Command:"cmd.exe /c 'C:\\temp\HelloWorld.bat'" }
 }
 
-#Done like chicken dinner.
+#Done like dinner.
