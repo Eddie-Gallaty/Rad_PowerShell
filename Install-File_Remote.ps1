@@ -11,7 +11,6 @@ foreach($pc in $clients)
    $client = $pc.Name
 
    #Copy bat file and exe from local to server side
-
    Copy-Item –Path C:\Users\User\Scripts\Powershell\HelloWorld_Install.bat –Destination \\$client\c$\temp\
    Copy-Item –Path C:\Users\User\Scripts\Powershell\HelloWorld.exe –Destination \\$client\c$\temp\
 
