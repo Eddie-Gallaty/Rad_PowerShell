@@ -14,7 +14,7 @@ foreach($pc in $clients)
    Copy-Item –Path C:\Users\User\Scripts\Powershell\HelloWorld_Install.bat –Destination \\$client\c$\temp\
    Copy-Item –Path C:\Users\User\Scripts\Powershell\HelloWorld.exe –Destination \\$client\c$\temp\
 
-   #invoke serverside command to install batch file.
+   #invoke server side command to install batch file.
    Invoke-Command -ComputerName $client -ScriptBlock {Invoke-Expression -Command:"cmd.exe /c 'C:\\temp\HelloWorld.bat'" }
 }
 
